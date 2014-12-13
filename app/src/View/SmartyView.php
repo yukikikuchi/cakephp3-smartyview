@@ -62,8 +62,9 @@ class SmartyView extends View {
 		$this->_smarty->error_reporting = 'E_ALL & ~E_NOTICE';
 		$this->_smarty->debugging = true;
 		$this->_smarty->caching = 0;
-		$this->_smarty->seed = '3835d21d4c6997aa6909d3172629a751';
 		$this->_smarty->clearCompiledTemplate();
+		
+		$viewOptions['seed'] = '3835d21d4c6997aa6909d3172629a751';
 		parent::__construct($request, $response, $eventManager, $viewOptions);
 	}
 	protected function _evaluate($viewFile, $dataForView) {

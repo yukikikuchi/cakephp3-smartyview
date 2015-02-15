@@ -69,11 +69,7 @@ class SmartyView extends View {
 	}
 	protected function _evaluate($viewFile, $dataForView) {
 		foreach ($dataForView as $key => $val) {
-			if (!is_object($val)) {
-				$this->_smarty->assign($key, $val);
-			} else {
-				$this->_smarty->assignByRef($key, $val);
-			}
+			$this->_smarty->assign($key, $val);
 		}
 		$this->_smarty->assignByRef('this', $this);
 		

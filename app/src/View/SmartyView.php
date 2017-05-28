@@ -28,7 +28,7 @@ use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\Event\EventManager;
 
-require_once(ROOT . '/vendor'.DS.'smarty'.DS.'Smarty.class.php');
+require_once(ROOT . '/vendor'.DS.'smarty'.DS.'smarty'.DS.'libs'.DS.'Smarty.class.php');
 use \Smarty;
 
 /**
@@ -63,6 +63,7 @@ class SmartyView extends View {
 		$this->_smarty->debugging = true;
 		$this->_smarty->caching = 0;
 		$this->_smarty->clearCompiledTemplate();
+    $this->_smarty->default_modifiers = ['escape:"html"'];
 		
 		$viewOptions['seed'] = '3835d21d4c6997aa6909d3172629a751';
 		parent::__construct($request, $response, $eventManager, $viewOptions);
